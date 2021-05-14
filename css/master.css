@@ -1,0 +1,427 @@
+/* Start Variables */
+:root{
+    --main-duration: 0.5s;
+    --main-clr: #062261;
+    --main-padding: 50px 0 50px 0;
+    --sec-clr: #E5D3C0;
+    --par-clr: brown;
+}
+/* End Variables */
+/*Start Global Rules*/
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Work Sans', sans-serif;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Small */
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  /* Medium */
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  /* Large */
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+/* End Global Rules */
+/* Start Header */
+.header{
+    padding: 15px;
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo{
+    width: 70px;
+}
+.header .links{
+    position: relative;
+}
+.links:hover .icon :nth-child(2){
+    width: 100%;
+}
+.links:hover ul{
+    display: block;
+}
+.links .icon{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 30px;
+    gap: 5px;
+}
+.icon span{
+    height: 2px;
+    background-color: brown;
+}
+.icon :first-child,
+.icon :last-child
+{ 
+    width: 100%;
+}
+.icon :nth-child(2){
+    width: 70%;
+    transition: var(--main-duration);
+}
+.links ul{
+    background-color: #D0B6A5;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    width: 250px;
+    right: 0;
+    top: calc(100% + 20px);
+    display: none;
+    z-index: 1;
+}
+.links ul::before{
+    content: '';
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent #D0B6A5 transparent;
+    position: absolute;
+    right: 5px;
+    top: -30px;
+
+}
+.links ul li a{
+    display: block;
+    padding: 20px;
+    color: #607377;
+    text-decoration: none;
+    transition: var(--main-duration);
+}
+.links ul li a:hover{
+    padding-left: 40px;
+}
+.links ul li:not(:last-child) a{
+    border-bottom: 1px solid #878C90;
+}
+/* End Header */
+/* Start Section */
+.section{
+    background-image: url("../images/arent-pyke-amareloterrrace-fullwidth-1710at2x-1024x676-1553878929.jpg");
+    background-size: cover;
+    height: calc(100vh - 100px);
+    position: relative;
+}
+.intro-text{
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    text-align: center;
+    transform: translate(-50%, -25%);
+    width: 320px;
+    max-width: 100%;
+}
+.intro-text h1{
+    margin: 0;
+    font-size: 50px;
+    font-weight: 700;
+    color: var(--main-clr);
+}
+.intro-text p{
+    font-size: 20px;
+    font-weight: 400;
+}
+/* End Section */
+/*Start Features*/
+.features{
+    padding: var(--main-padding);
+    background-color: var(--sec-clr);
+}
+.features .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    grid-gap: 20px;
+}
+.feat{
+    text-align: center;
+    padding: 15px;
+}
+.feat i{
+    color: var(--main-clr);
+    font-size: xx-large;
+}
+.feat h3{
+    font-size: 19px;
+    font-weight: 800;
+    margin: 20px 0;
+}
+.feat p{
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--par-clr);
+}
+/* End Features */
+/* Start Services */
+.services{
+    background-color: bisque;
+    padding: var(--main-padding);
+}
+.heading{
+    font-weight: 800;
+    font-size: 100px;
+    margin: 0;
+    text-align: center;
+    color: cadetblue;
+}
+.heading + p{
+    font-weight: 400;
+    font-size: 25px;
+    text-align: center;
+    margin: -25px 0 0;
+    color: darkgray;
+}
+@media (max-width: 767px) {
+    .heading {
+      font-size: 50px;
+    }
+    .heading + p {
+      margin-top: -15px;
+      font-size: 15px;
+    }
+}
+.srv-cntnt{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    grid-gap: 25px;
+    margin-top: 90px;
+}
+.single-srv{
+    display: flex;
+    margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+    .single-srv {
+      flex-direction: column;
+      text-align: center;
+    }
+}
+.single-srv i{
+    color: var(--main-clr);
+    flex-basis: 50px;
+    font-size: xx-large;
+    margin-top: -6px;
+}
+.single-srv .text{
+    flex: 1;
+}
+.text h3{
+    margin: 0 0 15px;
+}
+.text p{
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--par-clr);
+}
+.image-column{
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 50px;
+}
+.image-column::before{
+    content: "";
+    background-color: darksalmon;
+    width: 100px;
+    height: calc(100% + 60px);
+    top: -30px;
+    position: absolute;
+    right: calc((100% - 250px) / 2 - 50px);
+    z-index: -1;
+}
+.image-column img{
+    width: 250px;
+}
+@media (max-width: 1199px) {
+    .image-column {
+      display: none;
+    }
+}
+/* End Services */
+/* Start Portofolio */
+.portofolio{
+    padding: var(--main-padding);
+    background-color: var(--sec-clr);
+}
+.portofolio-cntnt{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    grid-gap: 25px;
+    margin-top: 90px;
+}
+.card{
+    background-color: #DEB388;
+    height: 400px;
+}
+.card img{
+    max-width: 100%;
+    width: 500px;
+    height: 250px;
+}
+.info{
+    padding: 15px;
+}
+.info h3{
+    margin: 0;
+    font-weight: 700;
+    font-size: 20px;
+}
+.info p{
+    color: var(--par-clr);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 0;
+}
+/* End Portofolio */
+/* Start About */
+.About{
+    padding: var(--main-padding);
+    padding-bottom: 100px;
+    background-color: bisque;
+}
+.About-cntnt{
+    margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.about-img{
+    position: relative;
+    width: 250px;
+    z-index: 1;
+}
+.about-img img{
+    max-width: 100%;
+}
+.about-img::before{
+    content: '';
+    position: absolute;
+    background-color: darkgray;
+    width: 100px;
+    height: calc(100% + 80px);
+    top: -40px;
+    left: -20px;
+    z-index: -1;
+}
+.about-img::after{
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 300px;
+    top: -40px;
+    right: -150px;
+    border-left: 80px solid var(--main-clr);
+    border-bottom: 80px solid var(--main-clr);
+    z-index: -1;
+}
+.about-txt{
+    flex-basis: calc(100% - 500px);
+}
+.about-txt p:first-of-type{
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 40px;
+    line-height: 2;
+}
+.about-txt p:last-of-type{
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--par-clr);
+    line-height: 2;
+}
+.about-txt hr{
+    border-color: var(--main-clr);
+    width: 50%;
+    display: inline-block;
+}
+@media(max-width: 991px){
+    .About-cntnt{
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-img{
+        margin: auto auto 50px;
+    }
+    .about-img::after,
+    .about-img::before{
+        display: none;
+    }
+}
+/* End About */
+/* Start Contact */
+.contact{
+    padding: var(--main-padding);
+    background-color: var(--sec-clr);
+}
+.contact-info{
+    padding: var(--main-padding);
+    text-align: center;
+}
+.contact-info p{
+    font-size: 35px;
+    font-weight: 800;
+    color: darksalmon;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+.contact-info .lnk{
+    color: var(--main-clr);
+    font-size: 35px;
+    font-weight: 800;
+    text-decoration: none;
+}
+.social{
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.social i{
+    margin-left: 10px;
+    color: darksalmon;
+}
+@media(max-width: 767px){
+    .contact-info .lnk,
+    .contact-info p{
+        font-size: 20px;
+    }
+}
+/* End Contact */
+/* Start Footer */
+.footer{
+    background-color: darksalmon;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+}
+.footer span {
+    font-weight: 700;
+    color: var(--main-clr);
+}
+/* End Footer */
